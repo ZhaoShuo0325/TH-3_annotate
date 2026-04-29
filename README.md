@@ -64,6 +64,9 @@ nohup wget -c --tries=0 --timeout=60 \
 nohup wget -c --tries=0 --timeout=60 \
   http://eggnog5.embl.de/download/emapperdb-5.0.2/eggnog.taxa.tar.gz \
   > wget_eggnog_taxa.log 2>&1 &
+
+echo 'export EGGNOG_DATA_DIR=$(pwd)' >> ~/.bash_profile
+source ~/.bash_profile
 ```
 
 ## Assembly Quality Control and Annotate
