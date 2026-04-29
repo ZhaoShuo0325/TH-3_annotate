@@ -65,3 +65,16 @@ nohup wget -c --tries=0 --timeout=60 \
   http://eggnog5.embl.de/download/emapperdb-5.0.2/eggnog.taxa.tar.gz \
   > wget_eggnog_taxa.log 2>&1 &
 ```
+
+## Assembly Quality Control and Annotate
+Before annotation, the FASTA file must be standardized, and assembly statistics should be calculated.
+```bash
+# Standardize FASTA format
+sed 's/>.*/>TH3_contig/' TH-3.fa.fasta > TH-3_clean.fa
+# Calculate sequence lengths
+grep -v ">" TH-3_clean.fa | tr -d '\n\r' | wc -c
+# Count gap numbers
+grep -v ">" TH-3_clean.fa | tr -cd 'Nn' | wc -c
+# Calculate GC content
+grep -v ">" TH-3_clean.fa | tr -cd 'GCgc' | wc -c | awk '{print $1/36024841*100 "%"}'
+```
