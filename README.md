@@ -39,4 +39,12 @@ cd funannotate_db
 funannotate setuo -i all
 funannotate check --it
 ```
-
+**Note on Database Downloads**
+Due to potential changes over time, the default download paths stored in funannotate may become outdated or expire. You can refer to the funannotate-db-info.txt file for the required data versions and download them manually.For example, you can use the following command to set up the BUSCO database in the background:
+The annotation process relies on several external databases
+```bash
+nohup funannotate setup -b dikarya \
+  -d funannotate_db \
+  --install busco -w \
+  > setup_busco.log 2>&1 &
+```
