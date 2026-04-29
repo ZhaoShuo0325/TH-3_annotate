@@ -1,0 +1,10 @@
+merops	diamond	/public/home/zhaoshuo/neau/funannotate_db/merops.dmnd	12.5	2023-01-19	5097	fcb6be84474929cf76e3fa1731d49af7
+uniprot	diamond	/public/home/zhaoshuo/neau/funannotate_db/uniprot.dmnd	2024_06	2024-01-29	574627	05564a1cc07880ddfa1cdcd306aa08a2
+dbCAN	hmmer3	/public/home/zhaoshuo/neau/funannotate_db/dbCAN.hmm	14.0	2025-08-26	875	fb112af319a5001fbf547eac29e7c3b5
+pfam	hmmer3	/public/home/zhaoshuo/neau/funannotate_db/Pfam-A.hmm	36.0	2024-01-01	21979	b292207eb789a3c08276ac1cd12bc6ba
+repeats	diamond	/public/home/zhaoshuo/neau/funannotate_db/repeats.dmnd	1.0	2026-04-29	11950	none
+go	text	/public/home/zhaoshuo/neau/funannotate_db/go.obo	2026-03-25	2026-03-25	100000	60c80f441677c60ffe66cad65b4898cd
+mibig	diamond	/public/home/zhaoshuo/neau/funannotate_db/mibig.dmnd	1.4	2026-04-29	41002	b3cacde3f5d6b8ac27d319ce3d2677c1
+interpro	xml	/public/home/zhaoshuo/neau/funannotate_db/interpro.xml	108.0	2026-01-29	51489	59bb9a11620aa9ee64b6cf8ca51693ea
+gene2product	text	/public/home/zhaoshuo/neau/funannotate_db/ncbi_cleaned_gene_products.txt	1.97	2025-08-05	34473	06c7885e8db4bb3f7f83e59c1b707a54
+busco_outgroups	outgroups	/public/home/zhaoshuo/neau/funannotate_db/outgroups	1.0	2026-04-29	8	6795b1d4545850a4226829c7ae8ef058
