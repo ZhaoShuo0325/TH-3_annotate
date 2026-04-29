@@ -78,3 +78,31 @@ grep -v ">" TH-3_clean.fa | tr -cd 'Nn' | wc -c
 # Calculate GC content
 grep -v ">" TH-3_clean.fa | tr -cd 'GCgc' | wc -c | awk '{print $1/36024841*100 "%"}'
 ```
+### Build index
+Index and sort paired-end FASTQ files using HISAT2
+```bash
+# run hisat2
+hisat2 -p 64 --dta -x $INDEX -1 $FQ1 -2 $FQ2 -S $OUT_DIR/CK_1.sam
+samtools sort -@ 32 -o $OUT_DIR/CK_1.sorted.bam $OUT_DIR/CK_1.sam
+```
+### Mask
+Mask repetitive sequences using `funannotate mask`
+```bash
+# run funannotate mask
+funannotate mask -i $GENOME -o $OUT_DIR/TH-3_masked.fa --cpu 32
+```
+### Predict
+Perform gene prediction using `funannotate predict`
+```bash
+# run funannotate predict
+funannotate predict -i $OUT_DIR/TH-3_masked.fa \
+                    -o $OUT_DIR/TH-3_predict \
+                    -s "Aspergillus_niger" \
+                    --strain "TH-3" \
+                    --rna_bam $OUT_DIR/CK_1.sorted.bam \
+                    --busco_db dikarya \
+                    --cpus 64 \
+                    --busco_seed_species aspergillus_nidulans \
+                    --optimize_augustus \
+                    --organism fungus
+```
