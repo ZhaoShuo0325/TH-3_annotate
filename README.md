@@ -49,7 +49,7 @@ nohup funannotate setup -b dikarya \
   --install busco -w \
   > setup_busco.log 2>&1 &
 ```
-**Additionally**, when using funannotate annotate, the eggNOG database is required and must be downloaded manually.
+**Additionally**, when using `funannotate annotate`, the eggNOG database is required and must be downloaded manually.
 ```bash
 # Download eggNOG
 mkdir -p eggnog_db
