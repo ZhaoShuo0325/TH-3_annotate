@@ -40,11 +40,28 @@ funannotate setuo -i all
 funannotate check --it
 ```
 **Note on Database Downloads:**
-Due to potential changes over time, the default download paths stored in funannotate may become outdated or expire. You can refer to the funannotate-db-info.txt file for the required data versions and download them manually.For example, you can use the following command to set up the BUSCO database in the background:
+Due to potential changes over time, the default download paths stored in funannotate may become outdated or expire. You can refer to the funannotate-db-info.txt file for the required data versions and download them manually. For example, you can use the following command to set up the BUSCO database in the background:
 The annotation process relies on several external databases
 ```bash
+# For example
 nohup funannotate setup -b dikarya \
   -d funannotate_db \
   --install busco -w \
   > setup_busco.log 2>&1 &
+```
+**Additionally**, when using funannotate annotate, the eggNOG database is required and must be downloaded manually.
+```bash
+# Download eggNOG
+mkdir -p eggnog_db
+cd eggnog_db
+
+nohup wget -c --tries=0 --timeout=60 \
+  http://eggnog5.embl.de/download/emapperdb-5.0.2/eggnog.db.gz \
+  > wget_eggnog_db.log 2>&1 &
+nohup wget -c --tries=0 --timeout=60 \
+  http://eggnog5.embl.de/download/emapperdb-5.0.2/eggnog_proteins.dmnd.gz \
+  > wget_eggnog_dmnd.log 2>&1 &
+nohup wget -c --tries=0 --timeout=60 \
+  http://eggnog5.embl.de/download/emapperdb-5.0.2/eggnog.taxa.tar.gz \
+  > wget_eggnog_taxa.log 2>&1 &
 ```
