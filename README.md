@@ -40,7 +40,7 @@ funannotate setuo -i all
 funannotate check --it
 ```
 **Note on Database Downloads:**
-Due to potential changes over time, the default download paths stored in funannotate may become outdated or expire. You can refer to the funannotate-db-info.txt file for the required data versions and download them manually. For example, you can use the following command to set up the BUSCO database in the background:
+Due to potential changes over time, the default download paths stored in funannotate may become outdated or expire. You can refer to the `funannotate-db-info.txt` file for the required data versions and download them manually. For example, you can use the following command to set up the BUSCO database in the background:
 The annotation process relies on several external databases
 ```bash
 # For example
