@@ -1,13 +1,17 @@
 # TH-3_annotate
 
 ## Environment Setup and Configuration
-### 1. Create Conda Environment
 First, create the environment using the provided `funannotate_env.yaml` file.
 ```bash
 # Clone the repository and enter the directory
-git clone [https://github.com/YourUsername/YourRepository.git](https://github.com/YourUsername/YourRepository.git)
-cd YourRepository
+git clone https://github.com/ZhaoShuo0325/TH-3_annotate.git
+cd TH-3_annotate
 
 # Create and activate the environment
 conda env create -f ./funannotate_env.yaml
 conda activate funannotate_env
+```
+Due to licensing restrictions, GeneMark cannot be installed directly via Conda. Please follow these manual steps:
+1. Go to the https://exon.gatech.edu/GeneMark/license_download.cgi and apply for a GMES/ET/EP license.
+2. Place the Key: Move the downloaded license key to your home directory: ~/.gm_key.
+3. Install & Set Path:
