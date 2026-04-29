@@ -123,7 +123,8 @@ funannotate annotate -i $HOME/annotate/TH-3_predict \
                      --strain "TH-3" \
                      --cpus 64
 ```
-**Core Output Files**\t
-`.gbk`: The master annotation file in GenBank format, containing both sequences and functional metadata.\t
-`.annotations.txt`: A comprehensive table summarizing all functional predictions (eggNOG, Pfam, GO, KEGG, etc.) for each gene.\t
-`.agp`: Layout file defining the relationship between contigs and scaffolds, required for NCBI submission.\t
+**Core Output Files**  
+`.gbk`: The master annotation file in GenBank format, containing both sequences and functional metadata.  
+`.annotations.txt`: A comprehensive table summarizing all functional predictions (eggNOG, Pfam, GO, KEGG, etc.) for each gene.  
+`.agp`: Layout file defining the relationship between contigs and scaffolds, required for NCBI submission.  
+`.gff3`: A standardized file containing genomic coordinates (gene, mRNA, CDS) integrated with functional descriptions (eggNOG, Pfam, etc.), ideal for genome browsers.
