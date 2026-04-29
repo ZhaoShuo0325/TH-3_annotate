@@ -128,3 +128,4 @@ funannotate annotate -i $HOME/annotate/TH-3_predict \
 `.annotations.txt`: A comprehensive table summarizing all functional predictions (eggNOG, Pfam, GO, KEGG, etc.) for each gene.  
 `.agp`: Layout file defining the relationship between contigs and scaffolds, required for NCBI submission.  
 `.gff3`: A standardized file containing genomic coordinates (gene, mRNA, CDS) integrated with functional descriptions (eggNOG, Pfam, etc.), ideal for genome browsers.
+`.json`: A summary of assembly and annotation metrics (e.g., gene count, GC content, and coding density).
