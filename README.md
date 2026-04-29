@@ -15,3 +15,18 @@ Due to licensing restrictions, GeneMark cannot be installed directly via Conda. 
 1. Go to the https://exon.gatech.edu/GeneMark/license_download.cgi and apply for a GMES/ET/EP license.
 2. Place the Key: Move the downloaded license key to your home directory: ~/.gm_key.
 3. Install & Set Path:
+```bash
+# Ensure key file in your home directory
+ls -a ~ | grep .gm_key
+```
+```bash
+# Decompress your downloaded package
+tar -zxvf gmes_linux_64.tar.gz
+cd gmes_linux_64/
+```
+```bash
+# Fix Perl interpreter paths and set environment variables
+perl -i -pe 's{^#!/usr/bin/perl}{#!/usr/bin/env perl}g' *.pl
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d/
+echo "export GENEMARK_PATH=$(pwd)" >> $CONDA_PREFIX/etc/conda/activate.d/genemark.sh
+```
