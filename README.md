@@ -69,7 +69,7 @@ echo 'export EGGNOG_DATA_DIR=$(pwd)' >> ~/.bash_profile
 source ~/.bash_profile
 ```
 
-## Assembly Quality Control and Annotate
+## Predict and Annotate
 Before annotation, the FASTA file must be standardized, and assembly statistics should be calculated.
 ```bash
 # Standardize FASTA format
@@ -114,3 +114,16 @@ funannotate predict -i $OUT_DIR/TH-3_masked.fa \
 # save parameters for future use
 funannotate species -s aspergillus_niger_th-3 -a $OUT_DIR/TH-3_predict/predict_results/aspergillus_niger_th-3.parameters.json
 ```
+### Annotate
+```bash
+# run funannotate annotate
+funannotate annotate -i $HOME/annotate/TH-3_predict \
+                     -o $OUT_DIR/TH-3_annotate \
+                     --species "Aspergillus niger" \
+                     --strain "TH-3" \
+                     --cpus 64
+```
+**Core Output Files**
+`.gbk`: The master annotation file in GenBank format, containing both sequences and functional metadata.
+`.annotations.txt`: A comprehensive table summarizing all functional predictions (eggNOG, Pfam, GO, KEGG, etc.) for each gene.
+`.agp`: Layout file defining the relationship between contigs and scaffolds, required for NCBI submission.
