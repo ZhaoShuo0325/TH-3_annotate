@@ -27,4 +27,16 @@ cd gmes_linux_64/
 perl -i -pe 's{^#!/usr/bin/perl}{#!/usr/bin/env perl}g' *.pl
 mkdir -p $CONDA_PREFIX/etc/conda/activate.d/
 echo "export GENEMARK_PATH=$(pwd)" >> $CONDA_PREFIX/etc/conda/activate.d/genemark.sh
+
+# Apply changes immediately
+source $CONDA_PREFIX/etc/conda/activate.d/genemark.sh
 ```
+## Setup Funannotate Datebases
+The annotation process relies on several external databases
+```bash
+mkdir -p funannotate_db
+cd funannotate_db
+funannotate setuo -i all
+funannotate check --it
+```
+
