@@ -109,3 +109,8 @@ funannotate predict -i $OUT_DIR/TH-3_masked.fa \
                     --optimize_augustus \
                     --organism fungus
 ```
+**Save custom species parameters for reuse:** Usethe `funannotate species` command to save the trained gene-model parameters into the local database. This allows for consistent and reproducible annotation across different versions or similar strains of the assembly.
+```bash
+# save parameters for future use
+funannotate species -s aspergillus_niger_th-3 -a $OUT_DIR/TH-3_predict/predict_results/aspergillus_niger_th-3.parameters.json
+```
